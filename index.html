@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Link CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Music -->
+    
+    <div class="container">
+        
+        <!-- PAGE 1: Welcome / Landing Page -->
+        <div id="page-1" class="page active">
+            <h1>Rock Paper Scissors</h1>
+            <p>A professional and classic practice game! Play against your friend or the computer and have fun.</p>
+            <button class="btn" onclick="goToPage(2)">Start Game</button>
+            <!-- Background Audio -->
+            <audio id="bg-music" src="music.mp4" loop></audio>
+
+                <!-- Music Toggle Button -->
+            <button id="music-btn" onclick="toggleMusic()">Play Music</button>
+            
+            
+        </div>
+
+        <!-- PAGE 2: Player Setup Page -->
+        <div id="page-2" class="page">
+            <h2>Player Details</h2>
+            
+            <!-- Player 1 -->
+<div class="player-card">
+    <label><strong>Player 1 (You)</strong></label>
+    <div class="upload-box">
+        <img id="p1-preview" class="profile-preview" src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alisha" alt="Preview" onclick="document.getElementById('p1-file').click()">
+        <br>
+        <input type="file" id="p1-file" accept="image/*" style="display:none;" onchange="previewImage(event, 'p1-preview')">
+        <small style="color: #94a3b8; cursor:pointer;" onclick="document.getElementById('p1-file').click()">Click to change picture</small>
+    </div>
+    <div class="input-group">
+        <input type="text" id="p1-name" class="entry" placeholder="Enter Player 1 Name">
+    </div>
+    <div class="input-group">
+        <input type="number" class="entry" placeholder="Enter Age">
+    </div>
+</div>
+
+<!-- Player 2 (Optional) -->
+<div class="player-card">
+    <label><strong>Player 2 (Or Computer)</strong></label>
+    <div class="upload-box">
+        <img id="p2-preview" class="profile-preview" src="https://api.dicebear.com/7.x/avataaars/svg?seed=PC" alt="Preview" onclick="document.getElementById('p2-file').click()">
+        <br>
+        <input type="file" id="p2-file" accept="image/*" style="display:none;" onchange="previewImage(event, 'p2-preview')">
+        <small style="color: #94a3b8; cursor:pointer;" onclick="document.getElementById('p2-file').click()">Click to change picture</small>
+    </div>
+    <div class="input-group">
+        <input type="text" id="p2-name" class="entry" placeholder="Player 2 Name (Leave empty for Computer)">
+    </div>
+    <div class="input-group">
+        <input type="number" class="entry"  placeholder="Enter Age">
+    </div>
+</div>
+
+            <button class="btn btn-secondary" onclick="goToPage(1)">Back</button>
+            <button class="btn" onclick="setupGame()">Next</button>
+        </div>
+
+        <!-- PAGE 3: Game Play Page -->
+        <!-- PAGE 3: Game Play Page -->
+<div id="page-3" class="page">
+    <h2>Game Zone</h2>
+    
+    <div class="score-board">
+        <span id="display-p1">Player 1: 0</span>
+        <span id="display-p2">Player 2: 0</span>
+    </div>
+
+    <p id="turn-indicator">Turn: Player 1</p>
+
+    <!-- Battle Arena for Animated Hands -->
+    <div class="battle-arena">
+        <div id="p1-hand" class="battle-hand">✊</div>
+        <span class="vs-text">VS</span>
+        <div id="p2-hand" class="battle-hand">✊</div>
+    </div>
+
+    <div class="choices-controls" id="choices-controls">
+        <button class="choice-btn" onclick="handlePlayerChoice('rock')" title="Rock">✊</button>
+        <button class="choice-btn" onclick="handlePlayerChoice('paper')" title="Paper">✋</button>
+        <button class="choice-btn" onclick="handlePlayerChoice('scissors')" title="Scissors">✌️</button>
+    </div>
+
+    <div id="game-result">Make your choice!</div>
+
+    <div style="margin-top: 25px;">
+        <button class="btn btn-secondary" onclick="goToPage(2)">Change Data (Back)</button>
+    </div>
+</div>
+    <!-- Link JavaScript File -->
+    <script src="java.js"></script>
+</body
+</html>

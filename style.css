@@ -1,0 +1,202 @@
+/* General Page Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.profile-preview {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid #cbd5e1;
+    transition: 0.3s ease;
+}
+
+.profile-preview:hover {
+    border-color: #3b82f6;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    box-sizing: border-box;
+}
+#music-btn {
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+    margin-top: 15px;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+
+}
+.entry{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+
+/* Score Board */
+.score-board {
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    background: #334155;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#turn-indicator {
+    font-size: 16px;
+    color: #38bdf8;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Battle Arena (Animated Hands) */
+.battle-arena {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin: 30px 0;
+    height: 120px;
+}
+
+.battle-hand {
+    font-size: 70px;
+    user-select: none;
+    transition: transform 0.3s ease;
+}
+
+.vs-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #f43f5e;
+}
+
+/* Hand Shake Keyframes Animation */
+@keyframes shakeLeft {
+    0% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(-20deg); }
+    50% { transform: translateY(0) rotate(0deg); }
+    75% { transform: translateY(-20px) rotate(-20deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes shakeRight {
+    0% { transform: translateY(0) rotate(0deg); }
+    25% { transform: translateY(-20px) rotate(20deg); }
+    50% { transform: translateY(0) rotate(0deg); }
+    75% { transform: translateY(-20px) rotate(20deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+.shake-l {
+    animation: shakeLeft 0.6s ease infinite;
+}
+
+.shake-r {
+    animation: shakeRight 0.6s ease infinite;
+}
+
+/* Choices Controls */
+.choices-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.choice-btn {
+    font-size: 32px;
+    padding: 15px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #334155;
+    border-radius: 12px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.choice-btn:hover {
+    background-color: #475569;
+    transform: scale(1.1);
+}
+
+#game-result {
+    font-size: 18px;
+    font-weight: 600;
+    color: #4ade80;
+    margin-top: 15px;
+    min-height: 30px;
+}
+
+/* Buttons */
+.btn {
+    background-color: #6366f1;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background-color: #4f46e5;
+}
+
+.btn-secondary {
+    background-color: #475569;
+}
+
+.btn-secondary:hover {
+    background-color: #334155;
+}
+
+/* Responsive Styles */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+    .battle-hand {
+        font-size: 50px;
+    }
+    .choice-btn {
+        font-size: 24px;
+        padding: 10px 15px;
+    }
+}
